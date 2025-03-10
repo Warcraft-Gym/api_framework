@@ -1,5 +1,5 @@
-from model.user import User
-from model.season_info import SeasonInfo
+from gnl_api_framework.model.user import User
+from gnl_api_framework.model.season_info import SeasonInfo
 
 class Team:
     def __init__(self, data : dict):

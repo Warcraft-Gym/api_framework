@@ -1,5 +1,5 @@
-from model.team import Team
-from model.season import Season
+from gnl_api_framework.model.team import Team
+from gnl_api_framework.model.season import Season
 
 class Match:
     def __init__(self, data : dict):

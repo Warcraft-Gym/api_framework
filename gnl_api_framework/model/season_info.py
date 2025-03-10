@@ -1,4 +1,4 @@
-from model.season import Season
+from gnl_api_framework.model.season import Season
 class SeasonInfo:
     def __init__(self, data : dict):
         self.season_id = data.get('season_id')

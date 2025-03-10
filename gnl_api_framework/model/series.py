@@ -1,6 +1,6 @@
 from datetime import datetime
-from model.user import User
-from model.match import Match
+from gnl_api_framework.model.user import User
+from gnl_api_framework.model.match import Match
 
 class Series:
     def __init__(self, data: dict):

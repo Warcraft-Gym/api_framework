@@ -1,5 +1,5 @@
-from services.base_service import BaseGNLBackendService
-from model.match import Match
+from gnl_api_framework.services.base_service import BaseGNLBackendService
+from gnl_api_framework.model.match import Match
 
 class MatchService(BaseGNLBackendService):
     

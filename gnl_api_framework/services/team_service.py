@@ -1,5 +1,5 @@
-from services.base_service import BaseGNLBackendService
-from model.team import Team
+from gnl_api_framework.services.base_service import BaseGNLBackendService
+from gnl_api_framework.model.team import Team
 
 class TeamService(BaseGNLBackendService):
     

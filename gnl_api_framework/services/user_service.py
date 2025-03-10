@@ -1,5 +1,5 @@
-from services.base_service import BaseGNLBackendService
-from model.user import User
+from gnl_api_framework.services.base_service import BaseGNLBackendService
+from gnl_api_framework.model.user import User
 
 class UserService(BaseGNLBackendService):
     def getUserByDiscord(self, discord_name):

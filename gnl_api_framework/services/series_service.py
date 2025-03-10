@@ -1,5 +1,5 @@
-from services.base_service import BaseGNLBackendService
-from model.series import Series
+from gnl_api_framework.services.base_service import BaseGNLBackendService
+from gnl_api_framework.model.series import Series
 
 class SeriesService(BaseGNLBackendService):
     

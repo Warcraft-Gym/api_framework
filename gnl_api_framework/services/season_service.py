@@ -1,5 +1,5 @@
-from services.base_service import BaseGNLBackendService
-from model.season import Season
+from gnl_api_framework.services.base_service import BaseGNLBackendService
+from gnl_api_framework.model.season import Season
 
 class SeasonService(BaseGNLBackendService):
     
