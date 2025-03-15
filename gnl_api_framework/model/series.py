@@ -26,7 +26,7 @@ class Series:
             player2 = User(player2)
         self.player2 = player2
         self.player1_score = data.get('player1_score')
-        self.player2_score = data.get('player1_score')
+        self.player2_score = data.get('player2_score')
 
     def to_dict(self):
         return {
