@@ -69,8 +69,8 @@ class BaseGNLBackendService(ABC):
             endpoint = endpoint[1:]
         return f"{self.url}/{endpoint}"
 
-    def get(self, endpoint, data: None):
-        return self.send_request(method=self.HTTPMethods.GET, url=self.buildURL(endpoint), data=data)
+    def get(self, endpoint, params=None):
+        return self.send_request(method=self.HTTPMethods.GET, url=self.buildURL(endpoint), params=params)
 
     def search(self, endpoint: str, search_str:str):
         return self.send_request(method=self.HTTPMethods.POST, url=self.buildURL(endpoint), params={'query':search_str})
