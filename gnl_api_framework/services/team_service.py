@@ -69,26 +69,32 @@ class TeamService(BaseGNLBackendService):
         logger.debug(f"Received response: {result}")
         return Team(result)
 
-    def add_player(self, team_id, player_ids: list):
+    def add_player(self, team_id, season_id, player_ids: list):
         if not team_id:
             logger.error(f"Team ID not defined: {team_id}")
             raise Exception(f"Team id not defined: {team_id}")
+        if not season_id:
+            logger.error(f"Season ID not defined: {season_id}")
+            raise Exception(f"Season id not defined: {season_id}")
         if not player_ids:
             logger.error(f"No player IDs defined: {player_ids}")
             raise Exception(f"No player ids defined: {player_ids}")
         logger.debug(f"Adding players {player_ids} to team with ID: {team_id}")
-        result = self.post(f"teams/addPlayers/{team_id}", player_ids)
+        result = self.post(f"teams/addPlayers/{team_id}/seasons/{season_id}", {"player_ids":player_ids})
         logger.debug(f"Received response: {result}")
         return Team(result)
     
-    def remove_player(self, team_id, player_ids: list):
+    def remove_player(self, team_id, season_id, player_ids: list):
         if not team_id:
             logger.error(f"Team ID not defined: {team_id}")
             raise Exception(f"Team id not defined: {team_id}")
+        if not season_id:
+            logger.error(f"Season ID not defined: {season_id}")
+            raise Exception(f"Season id not defined: {season_id}")
         if not player_ids:
             logger.error(f"No player IDs defined: {player_ids}")
             raise Exception(f"No player ids defined: {player_ids}")
         logger.debug(f"Removing players {player_ids} from team with ID: {team_id}")
-        result = self.post(f"teams/removePlayers/{team_id}", player_ids)
+        result = self.post(f"teams/removePlayers/{team_id}/seasons/{season_id}", player_ids)
         logger.debug(f"Received response: {result}")
         return Team(result)
