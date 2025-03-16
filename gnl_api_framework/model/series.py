@@ -31,7 +31,7 @@ class Series:
     def to_dict(self):
         return {
             'match_id': self.match_id,
-            'date_time': self.date_time,
+            'date_time': self.date_time.isoformat() if isinstance(self.date_time, datetime) else self.date_time,
             'caster': self.caster,
             'player1_id': self.player1_id,
             'player2_id': self.player2_id,
