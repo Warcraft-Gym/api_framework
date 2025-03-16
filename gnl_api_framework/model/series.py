@@ -38,3 +38,14 @@ class Series:
             'player1_score': self.player1_score,
             'player2_score': self.player2_score
         }
+
+    def __str__(self):
+        return (
+            f"Series(id={self.id}, "
+            f"match_id={self.match_id}, match={self.match}, "
+            f"date_time={self.date_time}, caster={self.caster}, "
+            f"player1_id={self.player1_id}, player1={self.player1}, "
+            f"player2_id={self.player2_id}, player2={self.player2}, "
+            f"player1_score={self.player1_score}, "
+            f"player2_score={self.player2_score})"
+        )

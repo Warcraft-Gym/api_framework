@@ -30,3 +30,12 @@ class Match:
             'playday': self.playday,
             'score': self.score
         }
+    
+    def __str__(self):
+        return (
+            f"Match(id={self.id}, "
+            f"team1_id={self.team1_id}, team1={self.team1}, "
+            f"team2_id={self.team2_id}, team2={self.team2}, "
+            f"season_id={self.season_id}, season={self.season}, "
+            f"playday={self.playday}, score={self.score})"
+        )

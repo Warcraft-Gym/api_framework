@@ -1,5 +1,5 @@
 class User:
-    def __init__(self, data : dict):
+    def __init__(self, data: dict):
         self.id = data.get('id')
         self.name = data.get('name')
         self.battleTag = data.get('battleTag')
@@ -17,3 +17,10 @@ class User:
             'mmr': self.mmr,
             'country': self.country
         }
+
+    def __str__(self):
+        return (
+            f"User(id={self.id}, name={self.name}, "
+            f"battleTag={self.battleTag}, discordTag={self.discordTag}, "
+            f"race={self.race}, mmr={self.mmr}, country={self.country})"
+        )

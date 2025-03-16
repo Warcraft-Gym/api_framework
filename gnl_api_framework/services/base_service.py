@@ -27,15 +27,18 @@ class BaseGNLBackendService(ABC):
     def send_request(self, method, url, data=None, headers=None, params=None):
         try:
             # Send the request
+            logger.debug(f"Send Reqest with Method:{method}, URL: {url}, data:{data}, headers:{headers}, params:{params}")
             response = requests.request(method, url, json=data, headers=headers, params=params)
 
             # Check the status code
             if response.status_code in [200, 201]:
+                logger.debug(f"Request successful: {response.status_code}")
                 try:
                     return response.json()  # Parse JSON response
                 except ValueError:
                     raise Exception(response.text)  # Return plain text if not JSON
             if response.status_code == 204:
+                logger.debug(f"Request successful: {response.status_code}")
                 return response.text
             else:
                 # Log or raise an error for non-200 status codes

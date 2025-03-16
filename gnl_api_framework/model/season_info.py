@@ -9,3 +9,12 @@ class SeasonInfo:
         if season:
             season = Season(season)
         self.season = season
+        
+    def __str__(self):
+        return (
+            f"SeasonInfo(season_id={self.season_id}, "
+            f"final_score={self.final_score}, "
+            f"points_available={self.points_available}, "
+            f"points_against={self.points_against}, "
+            f"season={self.season})"
+        )
