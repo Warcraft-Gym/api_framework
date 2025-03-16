@@ -9,7 +9,8 @@ class Team:
         pl = {}
         if players:
             for season_id, player in players.items():
-                pl[season_id] = User(player)
+                for p in player:
+                    pl[season_id] = User(p)
         self.players_by_season = pl
 
         seasons_info = data.get('seasons_info')
