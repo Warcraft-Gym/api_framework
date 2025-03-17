@@ -10,7 +10,7 @@ class UserService(BaseGNLBackendService):
             logger.error(f"Discord name not defined: {discord_name}")
             raise Exception(f"Discord name not defined: {discord_name}")
         logger.debug(f"Searching for user by Discord name: {discord_name}")
-        users = self.search_users(f"discord=={discord_name}")
+        users = self.search_users(f"discordTag=={discord_name}")
         if not users or len(users) == 0:
             logger.debug(f"No user found with Discord name: {discord_name}")
             return None
