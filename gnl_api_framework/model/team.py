@@ -24,9 +24,11 @@ class Team:
         }
 
     def __str__(self):
-        players_by_season_str = ", ".join(
-            f"{season_id}: {player}" for season_id, player in self.players_by_season.items()
-        )
+        players_by_season_str = None
+        if self.players_by_season:
+            players_by_season_str = ", ".join(
+                f"{season_id}: {player}" for season_id, player in self.players_by_season.items()
+            )
         seasons_info_str = ", ".join(str(season_info) for season_info in self.seasons_info) if self.seasons_info else None
         return (
             f"Team(id={self.id}, name={self.name}, "

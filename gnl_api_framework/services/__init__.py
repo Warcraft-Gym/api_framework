@@ -3,3 +3,4 @@ from gnl_api_framework.services.season_service import SeasonService
 from gnl_api_framework.services.series_service import SeriesService
 from gnl_api_framework.services.user_service import UserService
 from gnl_api_framework.services.team_service import TeamService
+from gnl_api_framework.services.map_service import MapService

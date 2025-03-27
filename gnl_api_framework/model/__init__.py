@@ -4,3 +4,4 @@ from gnl_api_framework.model.season import Season
 from gnl_api_framework.model.series import Series
 from gnl_api_framework.model.team import Team
 from gnl_api_framework.model.user import User
+from gnl_api_framework.model.map import Map

@@ -1,5 +1,6 @@
 from gnl_api_framework.model.team import Team
 from gnl_api_framework.model.season import Season
+from gnl_api_framework.model.map import Map
 
 class Match:
     def __init__(self, data : dict):
@@ -20,7 +21,10 @@ class Match:
             season = Season(season)
         self.season = season
         self.playday = data.get('playday')
-        self.score = data.get('score')
+        self.fixed_map_id = data.get('fixed_map_id')
+        self.fixed_map = None if not data.get('fixed_map') else Map(data.get('fixed_map'))
+        self.team1_score = data.get('team1_score')
+        self.team2_score = data.get('team2_score')
 
     def to_dict(self):
         return {
@@ -28,14 +32,16 @@ class Match:
             'team2_id': self.team2_id,
             'season_id': self.season_id,
             'playday': self.playday,
-            'score': self.score
+            'fixed_map_id': self.fixed_map_id,
+            'team1_score': self.team1_score,
+            'team2_score': self.team2_score
         }
     
     def __str__(self):
         return (
             f"Match(id={self.id}, "
-            f"team1_id={self.team1_id}, team1={self.team1}, "
-            f"team2_id={self.team2_id}, team2={self.team2}, "
-            f"season_id={self.season_id}, season={self.season}, "
-            f"playday={self.playday}, score={self.score})"
+            f"team1_id={self.team1_id}, team1={self.team1}, team1_score={self.team1_score} "
+            f"team2_id={self.team2_id}, team2={self.team2}, team2_score={self.team2_score} "
+            f"season_id={self.season_id}, season={self.season}, playday={self.playday}, "
+            f"fixed_map_id={self.fixed_map_id}, fixed_map={self.fixed_map})"
         )
