@@ -5,6 +5,8 @@ class Team:
     def __init__(self, data: dict):
         self.id = data.get('id')
         self.name = data.get('name')
+        self.icon = data.get('icon')
+        self.discord_role = data.get('discord_role')
         players = data.get('player_by_season')
         pl = {}
         if players:
@@ -20,7 +22,9 @@ class Team:
 
     def to_dict(self):
         return {
-            'name': self.name
+            'name': self.name,
+            'icon' : self.icon,
+            'discord_role' : self.discord_role
         }
 
     def __str__(self):
@@ -31,7 +35,7 @@ class Team:
             )
         seasons_info_str = ", ".join(str(season_info) for season_info in self.seasons_info) if self.seasons_info else None
         return (
-            f"Team(id={self.id}, name={self.name}, "
+            f"Team(id={self.id}, name={self.name}, icon={self.icon}, discord_role={self.discord_role} "
             f"players_by_season={{ {players_by_season_str} }}, "
             f"seasons_info=[{seasons_info_str}])"
         )
