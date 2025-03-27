@@ -1,10 +1,14 @@
+from gnl_api_framework.model.map import Map
 class Season:
     def __init__(self, data: dict):
         self.id = data.get('id')
         self.name = data.get('name')
         self.number_weeks = data.get('number_weeks')
         self.pick_ban = data.get('pick_ban')
-        self.maps = data.get('maps')
+        maps = data.get('maps')
+        if maps:
+            maps = [Map(map) for map in maps]
+        self.maps = maps
 
     def to_dict(self):
         return {
