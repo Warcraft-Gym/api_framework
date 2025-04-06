@@ -27,7 +27,10 @@ class Series:
         self.player2 = player2
         self.player1_score = data.get('player1_score')
         self.player2_score = data.get('player2_score')
+        self.player1_points = data.get('player1_points')
+        self.player2_points = data.get('player2_points')
         self.host_player_id = data.get('host_player_id')
+        self.is_fantasy_match = data.get('is_fantasy_match')
 
     def to_dict(self):
         return {
@@ -38,7 +41,10 @@ class Series:
             'player2_id': self.player2_id,
             'player1_score': self.player1_score,
             'player2_score': self.player2_score,
-            'host_player_id': self.host_player_id
+            'player1_points': self.player1_points,
+            'player2_points': self.player2_points,
+            'host_player_id': self.host_player_id,
+            'is_fantasy_match': self.is_fantasy_match
         }
 
     def __str__(self):
@@ -48,6 +54,7 @@ class Series:
             f"date_time={self.date_time}, caster={self.caster}, "
             f"player1_id={self.player1_id}, player1={self.player1}, "
             f"player2_id={self.player2_id}, player2={self.player2}, "
-            f"player1_score={self.player1_score}, "
-            f"player2_score={self.player2_score}, host_player_id={self.host_player_id})"
+            f"player1_score={self.player1_score}, player2_score={self.player2_score},"
+            f"player1_points={self.player1_points}, player2_points={self.player2_points})"
+            f"host_player_id={self.host_player_id}, is_fantasy_match={self.is_fantasy_match})"
         )

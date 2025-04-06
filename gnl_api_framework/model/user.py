@@ -7,6 +7,7 @@ class User:
         self.race = data.get('race')
         self.mmr = data.get('mmr')
         self.country = data.get('country')
+        self.fantasy_tier = data.get('fantasy_tier')
 
     def to_dict(self):
         return {
@@ -15,7 +16,8 @@ class User:
             'discordTag': self.discordTag,
             'race': self.race,
             'mmr': self.mmr,
-            'country': self.country
+            'country': self.country,
+            'fantasy_tier': self.fantasy_tier
         }
 
     def __str__(self):
@@ -23,4 +25,5 @@ class User:
             f"User(id={self.id}, name={self.name}, "
             f"battleTag={self.battleTag}, discordTag={self.discordTag}, "
             f"race={self.race}, mmr={self.mmr}, country={self.country})"
+            f"fantasy_tier={self.fantasy_tier})"
         )

@@ -4,6 +4,7 @@ class Season:
         self.id = data.get('id')
         self.name = data.get('name')
         self.number_weeks = data.get('number_weeks')
+        self.series_per_week = data.get('series_per_week')
         self.pick_ban = data.get('pick_ban')
         maps = data.get('maps')
         if maps:
@@ -14,7 +15,8 @@ class Season:
         return {
             'name': self.name,
             'number_weeks': self.number_weeks,
-            'pick_ban': self.pick_ban
+            'pick_ban': self.pick_ban,
+            'series_per_week': self.series_per_week
         }
     
     def __str__(self):
@@ -27,6 +29,7 @@ class Season:
             f"Season(id={self.id}, "
             f"name={self.name}, "
             f"number_weeks={self.number_weeks}, "
+            f"series_per_week={self.series_per_week}, "
             f"pick_ban={self.pick_ban}, " 
             f"maps={maps_str})"
         )

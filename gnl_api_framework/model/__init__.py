@@ -5,3 +5,5 @@ from gnl_api_framework.model.series import Series
 from gnl_api_framework.model.team import Team
 from gnl_api_framework.model.user import User
 from gnl_api_framework.model.map import Map
+from gnl_api_framework.model.fantasy_team import FantasyTeam
+from gnl_api_framework.model.fantasy_bet import FantasyBet

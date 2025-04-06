@@ -4,3 +4,6 @@ from gnl_api_framework.services.series_service import SeriesService
 from gnl_api_framework.services.user_service import UserService
 from gnl_api_framework.services.team_service import TeamService
 from gnl_api_framework.services.map_service import MapService
+from gnl_api_framework.services.fantasy_team_service import FantasyTeamService
+from gnl_api_framework.services.fantasy_bet_service import FantasyBetService
+from gnl_api_framework.services.fantasy_service import FantasyService
