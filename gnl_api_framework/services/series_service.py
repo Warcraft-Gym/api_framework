@@ -56,3 +56,17 @@ class SeriesService(BaseGNLBackendService):
         logger.debug(f"Received response: {series_l}")
         l = [Series(series) for series in series_l]
         return l
+    
+    def search_series_by_season(self, season_id, search_string=None):
+        logger.debug(f"Searching series for season[{season_id}] with query: {search_string}")
+        series_l = self.search(f"series/season/{season_id}/search", search_string)
+        logger.debug(f"Received response: {series_l}")
+        l = [Series(series) for series in series_l]
+        return l
+    
+    def search_series_by_season_and_playday(self, season_id, playday, search_string=None):
+        logger.debug(f"Searching series for season[{season_id}] with query: {search_string}")
+        series_l = self.search(f"series/season/{season_id}/playday/{playday}/search", search_string)
+        logger.debug(f"Received response: {series_l}")
+        l = [Series(series) for series in series_l]
+        return l

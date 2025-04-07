@@ -73,7 +73,11 @@ class BaseGNLBackendService(ABC):
         return self.send_request(method=self.HTTPMethods.GET, url=self.buildURL(endpoint), params=params)
 
     def search(self, endpoint: str, search_str:str):
-        return self.send_request(method=self.HTTPMethods.POST, url=self.buildURL(endpoint), params={'query':search_str})
+        if search_str:
+            return self.send_request(method=self.HTTPMethods.POST, url=self.buildURL(endpoint), params={'query':search_str})
+        else:
+            return self.send_request(method=self.HTTPMethods.POST, url=self.buildURL(endpoint))
+
 
     def post(self, endpoint, data: dict):
         if self.is_token_expired():
